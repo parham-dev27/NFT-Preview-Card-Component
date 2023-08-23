@@ -1,0 +1,111 @@
+@forward "./utils/reset";
+@use "./variables" as var;
+
+body {
+    background-color: var.$dark-blue__main;
+    color: var.$white;
+    font-family: var.$font-family;
+    font-size: var.$font-size;
+    font-weight: map-get(var.$font-weight, "medium");
+    height: 100dvh;
+    display: grid;
+    place-content: center;
+}
+
+.card {
+    background-color: var.$dark-blue__card;
+    padding: 24px;
+    max-width: 350px;
+    margin-inline: auto;
+    margin: 15px;
+    border-radius: 16px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    box-shadow: 0 0 50px rgba(black, 0.3);
+    &__img {
+        position: relative;
+        &--img {
+            border-radius: 8px;
+        }
+        &--overlay {
+            display: none;
+        }
+        &:hover {
+            .card__img--overlay {
+                border-radius: 8px;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(var.$cyan, 0.5);
+                display: grid;
+                place-content: center;
+                cursor: pointer;
+            }
+        }
+    }
+    &__title {
+        font-size: var.$font-size * 1.25;
+        font-weight: map-get(var.$font-weight, "strong");
+        &:hover {
+            color: var.$cyan;
+        }
+    }
+    &__description {
+        font-weight: map-get(var.$font-weight, "light");
+        color: var.$soft-blue;
+        font-size: var.$font-size * 0.9;
+    }
+    &__info {
+        display: flex;
+        flex-flow: row wrap;
+        font-size: var.$font-size * 0.9;
+        &__price {
+            display: flex;
+            flex-flow: row nowrap;
+            margin-right: auto;
+            &--price {
+                color: var.$cyan;
+                padding-inline: 7px;
+                font-weight: map-get(var.$font-weight, "strong");
+            }
+        }
+        &__time {
+            display: flex;
+            flex-flow: row wrap;
+            font-weight: map-get(var.$font-weight, "light");
+            color: var.$soft-blue;
+            &--time {
+                padding-inline: 7px;
+            }
+        }
+    }
+    hr {
+        border-color: rgba(var.$soft-blue, 0.3);
+    }
+    &__creator {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        gap: 15px;
+        &--avatar {
+            width: 35px;
+            height: auto;
+            border-radius: 50%;
+            border: 1px solid var.$white;
+        }
+        &--info {
+            color: var.$soft-blue;
+            font-size: var.$font-size * 0.85;
+            &--name {
+                color: var.$white;
+                &:hover {
+                    color: var.$cyan;
+                }
+            }
+        }
+    }
+}

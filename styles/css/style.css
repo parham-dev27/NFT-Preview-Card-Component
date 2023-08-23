@@ -1,0 +1,128 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background-color: hsl(217, 54%, 11%);
+  color: hsl(0, 0%, 100%);
+  font-family: "Outfit", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  height: 100dvh;
+  display: grid;
+  place-content: center;
+}
+
+.card {
+  background-color: hsl(216, 50%, 16%);
+  padding: 24px;
+  max-width: 350px;
+  margin-inline: auto;
+  margin: 15px;
+  border-radius: 16px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 20px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+}
+.card__img {
+  position: relative;
+}
+.card__img--img {
+  border-radius: 8px;
+}
+.card__img--overlay {
+  display: none;
+}
+.card__img:hover .card__img--overlay {
+  border-radius: 8px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 255, 247, 0.5);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+.card__title {
+  font-size: 1.40625rem;
+  font-weight: 600;
+}
+.card__title:hover {
+  color: hsl(178, 100%, 50%);
+}
+.card__description {
+  font-weight: 300;
+  color: hsl(215, 51%, 70%);
+  font-size: 1.0125rem;
+}
+.card__info {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 1.0125rem;
+}
+.card__info__price {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-right: auto;
+}
+.card__info__price--price {
+  color: hsl(178, 100%, 50%);
+  padding-inline: 7px;
+  font-weight: 600;
+}
+.card__info__time {
+  display: flex;
+  flex-flow: row wrap;
+  font-weight: 300;
+  color: hsl(215, 51%, 70%);
+}
+.card__info__time--time {
+  padding-inline: 7px;
+}
+.card hr {
+  border-color: rgba(139, 172, 218, 0.3);
+}
+.card__creator {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  gap: 15px;
+}
+.card__creator--avatar {
+  width: 35px;
+  height: auto;
+  border-radius: 50%;
+  border: 1px solid hsl(0, 0%, 100%);
+}
+.card__creator--info {
+  color: hsl(215, 51%, 70%);
+  font-size: 0.95625rem;
+}
+.card__creator--info--name {
+  color: hsl(0, 0%, 100%);
+}
+.card__creator--info--name:hover {
+  color: hsl(178, 100%, 50%);
+}
+
+/*# sourceMappingURL=style.css.map */
